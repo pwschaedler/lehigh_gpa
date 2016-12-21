@@ -5,3 +5,9 @@ type Grade struct {
 	Credits   int
 	Grade     string
 }
+
+/*
+func (grade Grade) String() string {
+	return fmt.Sprintf("%v", grade.ClassName)
+}
+*/
