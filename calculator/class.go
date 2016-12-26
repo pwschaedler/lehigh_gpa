@@ -1,6 +1,6 @@
 package calculator
 
-type Grade struct {
+type Class struct {
 	ClassName string
 	Credits   int
 	Grade     string

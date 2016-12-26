@@ -1,10 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-
-	"bufio"
 
 	"github.com/pwschaedler/lehighgpa/calculator"
 )
@@ -17,11 +16,9 @@ func NewUI() *CliUI {
 
 func (ui CliUI) PrintOptions() {
 	fmt.Println("\nPlease select an option.")
-	fmt.Println("a - Add Grade (not yet implemented)")
-	fmt.Println("e - Export Grades To File (not yet implemented)")
-	fmt.Println("g - Print GPA")
-	fmt.Println("i - Import Grades From File (not yet implemented)")
-	fmt.Println("p - Print Transcript (not yet implemented)")
+	fmt.Println("a - Add Grade (not yet implemented)     h - Print Prompt Options")
+	fmt.Println("e - Export Grades To File               i - Import Grades From File")
+	fmt.Println("g - Print GPA                           p - Print Transcript (not yet implemented)")
 	fmt.Println("q - Quit")
 }
 
@@ -43,7 +40,7 @@ func (ui CliUI) displayUI() {
 
 		switch op {
 		case 'a':
-			calc.InsertGrade(calculator.Grade{ClassName: "CSE 17", Credits: 4, Grade: "A"})
+			calc.InsertGrade(calculator.Class{ClassName: "CSE 17", Credits: 4, Grade: "A"})
 		case 'e':
 			calc.ExportToFile()
 		case 'g':
