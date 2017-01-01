@@ -14,7 +14,7 @@ func NewUI() *CliUI {
 	return new(CliUI)
 }
 
-func (ui CliUI) PrintOptions() {
+func (ui CliUI) printOptions() {
 	fmt.Println("\nPlease select an option.")
 	fmt.Println("a - Add Grade (not yet implemented)     h - Print Prompt Options")
 	fmt.Println("e - Export Grades To File               i - Import Grades From File")
@@ -22,12 +22,12 @@ func (ui CliUI) PrintOptions() {
 	fmt.Println("q - Quit")
 }
 
-func (ui CliUI) displayUI() {
+func (ui CliUI) DisplayUI() {
 	var calc = calculator.NewCalc()
 	var r = bufio.NewReader(os.Stdin)
 
 	fmt.Println("Welcome to the Lehigh GPA Calculator!")
-	ui.PrintOptions()
+	ui.printOptions()
 
 	for {
 		// Print prompt
@@ -46,7 +46,7 @@ func (ui CliUI) displayUI() {
 		case 'g':
 			calc.PrintGPA()
 		case 'h':
-			ui.PrintOptions()
+			ui.printOptions()
 		case 'i':
 			calc.ImportFromFile()
 		case 'p':
